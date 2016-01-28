@@ -18,11 +18,20 @@ class First extends Application{
   //-------------------------------------------------------------
   //  The normal pages
   //-------------------------------------------------------------
-  function index(){
+  function index()
+  {
     $this->data['pagebody'] = 'first';	// this is the view we want shown
     $record = $this->quotes->first();
     $this->data = array_merge($this->data, $record);
     $this->render();
+  }
+
+  function zzz()
+  {
+      $this->data['pagebody'] = 'first';	// this is the view we want shown
+      $record = $this->quotes->get(1);
+      $this->data = array_merge($this->data, $record);
+      $this->render();
   }
 }
 
